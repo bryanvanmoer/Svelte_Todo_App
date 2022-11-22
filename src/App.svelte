@@ -23,6 +23,10 @@
   function addTodo(idx, todoName) {
     $store[idx].todos = [getNewTodo(todoName), ...$store[idx].todos];
   }
+
+  function updateTodo(idx, todoIdx, oldValue) {
+    $store[idx].todos[todoIdx].complete = !oldValue;
+  }
   // $: console.log($store)
 </script>
 
@@ -61,9 +65,12 @@
           <div class="card-body">
             <div class="cardTitle">
               <div class="row">
+                <!-- Project Title -->
                 <div class="col-6">
                   <h5 class="card-title">{project.title}</h5>
                 </div>
+
+                <!-- Button to delete a project -->
                 <div class="col-6 text-end">
                   <button
                     type="button"
@@ -78,8 +85,12 @@
             <!-- For each for every todo in a project -->
             {#each project.todos as todo, todoIdx (todo.id)}
               <div class="checkbox checkbox-success">
-                <input id="checkbox3" type="checkbox" value={todo.complete} />
-                <label for="checkbox3">
+                <input
+                  type="checkbox"
+                  checked={todo.complete}
+                  on:click={() => updateTodo(idx, todoIdx, todo.complete)}
+                />
+                <label for="checkbox">
                   {todo.title}
                 </label>
               </div>

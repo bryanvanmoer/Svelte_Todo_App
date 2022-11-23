@@ -1,4 +1,8 @@
 /* Deafult Margin & Padding */
+
+body {
+  background-color: #f8f9fa;
+}
 /*-- Margin Top --*/
 .mt-5 {
   margin-top: 5px;

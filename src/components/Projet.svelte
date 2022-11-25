@@ -1,8 +1,7 @@
 <script>
   import { store, deleteProject } from "../stores/store";
   import Todo from "../components/Todo.svelte";
-
-  import updateDescriptionButton from "../components/updateDescriptionButton.svelte";
+  import UpdateDescriptionButton from "./UpdateDescriptionButton.svelte";
 
   export let project;
   export let idx;
@@ -56,22 +55,7 @@
           >
         </div>
       </div>
-      <div class="row">
-        <div class="col-6">
-          <p class="card-text">
-            Description :  {project.description}
-          </p>
-        </div>
-        <div class="col-6 text-end">
-          <button
-                  type="button"
-                  id="btnUpdate"
-                  class="btn btn-primary"
-                  on:click={() => updateProjetDescription(idx, "nouvText")}
-          > update</button>
-        </div>
-
-      </div>
+      <UpdateDescriptionButton {idx} {project}/>
 
 
       <h5 class="card-subtitle mb-2 ">List of todos</h5>

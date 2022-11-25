@@ -52,7 +52,7 @@
       </div>
 
       <p class="card-text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Description :  {project.description}
       </p>
 
       <h5 class="card-subtitle mb-2 ">List of todos</h5>

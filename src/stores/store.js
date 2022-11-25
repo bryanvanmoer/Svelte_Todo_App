@@ -7,11 +7,13 @@ const defaultProjects = [
     id: uid(),
     title: "Todo",
     todos: [],
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: uid(),
     title: "Todo",
     todos: [],
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
     id: uid(),
@@ -28,6 +30,7 @@ const defaultProjects = [
         complete: true,
       },
     ],
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
   },
 ];
 
@@ -36,6 +39,7 @@ function getNewProject(param) {
     id: uid(),
     title: param,
     todos: [],
+    description:"...",
   };
 }
 
